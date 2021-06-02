@@ -1,6 +1,7 @@
 @import "settings/colors";
 @import "settings/fonts";
 @import "settings/reset";
+@import "settings/mixins";
 
 body {
     font-family: $font-base;
