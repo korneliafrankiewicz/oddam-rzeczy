@@ -7,14 +7,22 @@ import {
   Switch,
   NavLink,
 } from 'react-router-dom';
-import {Home} from "../src/components/Home/Home"
+import theme from '../src/theme';
+import {ThemeProvider} from "@material-ui/core/styles";
+import Home from "../src/components/Home/Home";
+import HomeHeader from "../src/components/Home/HomeHeader";
+import Login from "../src/components/Home/Login";
 
 function App() {
   return (
     <HashRouter>
-      <>
+      <ThemeProvider theme={theme}>
+
+      <Switch>
       <Route exact path="/" component={Home}/>
-      </>
+      <Route exact path="/login" component={Login}/>
+      </Switch>
+      </ThemeProvider> 
     </HashRouter>
 
   );

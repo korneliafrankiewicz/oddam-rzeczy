@@ -1,13 +1,38 @@
 import { createMuiTheme } from '@material-ui/core';
-import "../src/scss/settings/colors.scss"
+import "../src/scss/settings/_colors.scss";
+import "../src/scss/settings/_fonts.scss";
+import createPalette from '@material-ui/core/styles/createPalette';
+// import {yellow , grey} from '@material-ui/core/colors';
 
-export const theme = createMuiTheme({
-    palette: {
+// const newYellow = yellow['600'];
+// const newGrey = grey['800']
+
+const theme = createMuiTheme({
+    palette: createPalette({
       primary: {
-        main: "$color-yellow",
+        main: "#FFFFFF",
+        contrastText: "#3C3C3C",
       },
       secondary: {
-        main: '$color-dark',
+        main: '#FAD648',
+        contrastText: "#3C3C3C",
       },
-    },
+    }),
+    shadows: ["none"],
+    // fontFamily: `$font-base`,
+
+    overrides: {
+      MuiButton: {
+        text: {
+          color: "#3C3C3C",
+          textTransform: "none",
+          padding: "10px 30px",
+          borderRadius: "0px",
+          letterSpacing: "1.3px",
+        }
+      }
+    }
+  
   });
+
+  export default theme;

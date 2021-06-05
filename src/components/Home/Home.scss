@@ -2,15 +2,5 @@
 
 .home-page {
     display: flex;
-
-    &-left_side {
-        display: flex;
-        background-image: url("../../assets/assets/Home-Hero-Image.jpg");
-        background-size: contain;
-        width: 50%;
-    }
-
-    &-right_side {
-        
-    }
+    width: 100%;
 }
