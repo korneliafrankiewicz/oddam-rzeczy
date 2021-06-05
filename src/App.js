@@ -17,10 +17,9 @@ function App() {
   return (
     <HashRouter>
       <ThemeProvider theme={theme}>
-
       <Switch>
       <Route exact path="/" component={Home}/>
-      <Route exact path="/login" component={Login}/>
+      <Route exact path="/logowanie" component={Login}/>
       </Switch>
       </ThemeProvider> 
     </HashRouter>
