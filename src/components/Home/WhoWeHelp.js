@@ -54,19 +54,9 @@ const useStyles = makeStyles((theme) => ({
 const WhoWeHelp = () => {
     const classes = useStyles();
     
-    const handleClick = (e) => {
-        return (
-            <h1>dwertfgdhyjm</h1>
-        )
-    }
+    const handleClick = () => {
 
-    const Greet =(name) =>  {     
-          console.log(`Hi there, ${name}`);
-          <h1>{`Hi there, ${name}`}</h1>
-          
-        
     }
-
 
     return ( 
        
@@ -80,7 +70,7 @@ const WhoWeHelp = () => {
                 </div>
 
                 <div className={classes.buttons}>
-                    <Button onClick={() => Greet("John")} className={classes.buttonOption}>Fundacjom</Button>
+                    <Button className={classes.buttonOption}>Fundacjom</Button>
                     <Button className={classes.buttonOption}>Organizacjom pozarządowym</Button>
                     <Button className={classes.buttonOption}>Zbiórkom lokalnym</Button>
                 </div>

@@ -1,18 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { createStyles, WithStyles, withStyles, Typography } from '@material-ui/core';
-import DecorationImg from "../../assets/assets/Decoration.svg";
 import BackgroundContactImg from "../../assets/assets/Background-Contact-Form.jpg";
 
-const styles = () =>
-  createStyles({
-    h: {
-      '&::before': {
-        content: '"some content"',
-        backgroundImage: `url(${BackgroundContactImg})`,
-      }
-    }
-  });
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -24,7 +13,9 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: `url(${BackgroundContactImg})`,
         backgroundSize: "cover",
         width: "100%",
-        height: "100vh"
+        height: "100vh",
+        display: "block",
+        opacity: "0.6"
       }
   
     },

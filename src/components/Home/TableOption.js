@@ -16,7 +16,7 @@ const TableOption = () => {
   const classes = useStyles()
   return ( 
     <div className={classes.table}>
-dopa
+
     </div>
    );
 }

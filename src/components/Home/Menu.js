@@ -1,8 +1,7 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button'
+
 import { makeStyles } from '@material-ui/core/styles';
 import {Link} from "react-scroll"
 
@@ -24,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
     },
     menuLink: {
         padding: "15px",
+        border: "1px solid transparent",
         "&:hover": {
             cursor: "pointer",
-            border: "0.5px solid #3C3C3C"
+            border: "1px solid #3C3C3C"
         }
     }
 
