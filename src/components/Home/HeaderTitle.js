@@ -31,18 +31,17 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         fontSize: "2em",      
-        border: "solid black 1px",
+        border: "0.4px solid #3C3C3C",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-around",
-        marginLeft: "30px"
+        padding: "0.4em 2em",
+        width: "45%"
     },
     span: {
         display: "flex",
         flexDirection: "column"
     },
-
-
 
   }));
 
@@ -62,8 +61,8 @@ const HeaderTitle = () => {
             </div>
 
             <div className={classes.buttons}>
-                <Button className={classes.button} >ODDAJ <span className={classes.span}> RZECZY</span> </Button>
-                <Button className={classes.button}>ZORGANIZUJ ZBIÓRKĘ</Button>
+                <Button className={classes.button} ><span className={classes.span}>ODDAJ <br/> RZECZY</span> </Button>
+                <Button className={classes.button}><span className={classes.span}>ZORGANIZUJ <br/> ZBIÓRKĘ</span></Button>
             </div>
         </div>
         </Container>

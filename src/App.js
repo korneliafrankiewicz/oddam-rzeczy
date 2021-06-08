@@ -12,6 +12,7 @@ import {ThemeProvider} from "@material-ui/core/styles";
 import Home from "../src/components/Home/Home";
 import HomeHeader from "../src/components/Home/HomeHeader";
 import Login from "../src/components/Home/Login";
+import DonateButton from "../src/components/Home/DonateButton"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/logowanie" component={Login}/>
+      <Route exact path="/logowanie" component={DonateButton}/>
       </Switch>
       </ThemeProvider> 
     </HashRouter>

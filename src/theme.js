@@ -1,13 +1,20 @@
-import { createMuiTheme } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import "../src/scss/settings/_colors.scss";
 import "../src/scss/settings/_fonts.scss";
 import createPalette from '@material-ui/core/styles/createPalette';
 // import {yellow , grey} from '@material-ui/core/colors';
 
 // const newYellow = yellow['600'];
-// const newGrey = grey['800']
+// const newGrey = grey['800'];
+
+const opensans = {
+  fontFamily: "Open Sans"
+}
 
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: opensans,
+  },
     palette: createPalette({
       primary: {
         main: "#FFFFFF",
@@ -19,9 +26,13 @@ const theme = createMuiTheme({
       },
     }),
     shadows: ["none"],
-    // fontFamily: `$font-base`,
 
     overrides: {
+      MuiCssBaseline: {
+        '@global': {
+          '@font-face': [opensans],
+        },
+      },
       MuiButton: {
         text: {
           color: "#3C3C3C",

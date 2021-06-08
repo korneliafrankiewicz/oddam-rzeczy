@@ -15,17 +15,6 @@ const useStyles = makeStyles((theme) => ({
         width: "45%",
         height: "963px",
     },
-    // nav: {
-    //     display: "flex",
-    //     height: "200px",
-    //     backgroundColor: "green"
-    // },
-    // title: {
-    //     display: "flex",
-    //     width: "55%",
-    //     backgroundColor: "red",
-    //     flexDirection:"column"
-    // }
 
   }));
 
