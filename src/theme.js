@@ -1,4 +1,4 @@
-import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { createMuiTheme } from '@material-ui/core';
 import "../src/scss/settings/_colors.scss";
 import "../src/scss/settings/_fonts.scss";
 import createPalette from '@material-ui/core/styles/createPalette';

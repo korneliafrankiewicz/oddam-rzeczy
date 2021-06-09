@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import DecorationImg from "../../assets/assets/Decoration.svg";
 import Button from "@material-ui/core/Button";
 import TableOption from "./TableOption";
+import Fundation from "./Fundation";
+import Organization from "./Organization";
+import Collection from "./Collection";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -53,10 +56,27 @@ const useStyles = makeStyles((theme) => ({
 
 const WhoWeHelp = () => {
     const classes = useStyles();
+    const [displayFund, setDisplayFund] = useState(true);
+    const [displayOrg, setDisplayOrg] = useState(false);
+    const [displayColl, setDisplayColl] = useState(false);
     
-    const handleClick = () => {
+const handleClickFund = () => {
+          setDisplayFund(true)
+          setDisplayOrg(false)
+          setDisplayColl(false)
+}
 
-    }
+const handleClickOrg = () => {
+    setDisplayFund(false)
+    setDisplayOrg(true)
+    setDisplayColl(false)
+}
+
+const handleClickColl = () => {
+    setDisplayFund(false)
+    setDisplayOrg(false)
+    setDisplayColl(true)
+}
 
     return ( 
        
@@ -70,14 +90,18 @@ const WhoWeHelp = () => {
                 </div>
 
                 <div className={classes.buttons}>
-                    <Button className={classes.buttonOption}>Fundacjom</Button>
-                    <Button className={classes.buttonOption}>Organizacjom pozarządowym</Button>
-                    <Button className={classes.buttonOption}>Zbiórkom lokalnym</Button>
+                    <Button onClick={handleClickFund} className={classes.buttonOption}>Fundacjom</Button>
+                    <Button onClick={handleClickOrg} className={classes.buttonOption}>Organizacjom pozarządowym</Button>
+                    <Button onClick={handleClickColl} className={classes.buttonOption}>Zbiórkom lokalnym</Button>
                 </div>
 
-                <div className={classes.descriptionWrapper}>
+                {displayFund && <Fundation />}
+                {displayOrg && <Organization/>}
+                {displayColl && <Collection />}
+
+                {/* <div className={classes.descriptionWrapper}>
                     <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru</p>
-                </div>
+                </div> */}
 
    
        

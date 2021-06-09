@@ -10,7 +10,6 @@ import {
 import theme from '../src/theme';
 import {ThemeProvider} from "@material-ui/core/styles";
 import Home from "../src/components/Home/Home";
-import HomeHeader from "../src/components/Home/HomeHeader";
 import Login from "../src/components/Home/Login";
 import DonateButton from "../src/components/Home/DonateButton"
 

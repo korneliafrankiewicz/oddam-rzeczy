@@ -1,6 +1,13 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import {
+    HashRouter,
+    Route,
+    Link,
+    Switch,
+    NavLink,
+  } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -31,7 +38,9 @@ const Login  = () => {
     return (
                    <div className={classes.root}>
                        <div className={classes.buttons}>
-                       <Button className={classes.btn}>Zaloguj</Button>
+                        <Link to="/logowanie">
+                        <Button className={classes.btn}>Zaloguj</Button>
+                        </Link>
                         <Button className={classes.btn} >Załóż konto</Button>
                        </div>
 
