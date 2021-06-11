@@ -72,11 +72,13 @@ const AboutUs = () => {
                 <div className={classes.decorationimg}>
                 <img src={DecorationImg} />
                 </div>
+
                     <p className={classes.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru</p>
                 
                 <div className={classes.signatureimg}>
                 <img width="150px" src={SignatureImg} />
                 </div>
+                
                 </div>
             </div>
             <div className={classes.imgPeople}></div>
