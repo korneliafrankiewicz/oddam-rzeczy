@@ -59,6 +59,10 @@ const useStyles = makeStyles((theme) => ({
   message: {
     marginTop: "20px"
   },
+  submitButtonWrapper: {
+    display: "flex",
+    justifyContent: "flex-end"
+  },
   submitButton: {
     display: "flex",
     alignSelf: "flex-end",
@@ -74,6 +78,16 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
         cursor: "pointer",
     }
+},
+succesMessage: {
+  display: "flex",
+  justifyContent: "center",
+  color: "green",
+  marginBottom: "10px"
+},
+errorMessage: {
+  color: "red",
+  marginTop: "20px"
 }
 
   
@@ -206,14 +220,12 @@ validateMessage(message) ? inquiry.message=message : setUnValidMess(true);
                 </div>
 
               { opCom &&
-                <div className={classes.title}>
+                <div className={classes.succesMessage}>
                  <h1>Wiadomość została wysłana! <br/> Wkrótce się skontaktujemy</h1>
                </div>
               }
 
-              {unValidName && <h1>Podane imię jest nieprawidłowe</h1>}
-              {unValidEmail && <p>Podany email jest nieprawidłowy</p>}
-              {unValidMess && <p>Podana wiadomość jest za krótka</p>}
+    
                
 
               <form className={classes.form} noValidate autoComplete="off" onSubmit={onSubmit}>
@@ -253,8 +265,14 @@ validateMessage(message) ? inquiry.message=message : setUnValidMess(true);
                     onChange={handleChangeMessage}
                   />
                   </div>
-                  
+
+                  <div className={classes.submitButtonWrapper}>
                   <Button className={classes.submitButton} type="submit" variant="contained">Wyślij</Button>
+                  </div>     
+
+                      {unValidName && <p className={classes.errorMessage}>Podane imię jest nieprawidłowe</p>}
+                      {unValidEmail && <p className={classes.errorMessage}>Podany email jest nieprawidłowy</p>}
+                      {unValidMess && <p className={classes.errorMessage}>Podana wiadomość jest za krótka</p>}
                 </div>
           </form>
 
