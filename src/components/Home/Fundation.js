@@ -1,6 +1,59 @@
 import React, { useState } from 'react';
-import {fundations} from "./fundationList"
+import {fundations} from "./fundationList";
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+
+const useStyles = makeStyles((theme) => ({
+    ulList: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "30px"
+       
+    },
+    liElements: {
+        display: "flex",
+        justifyContent: "space-between",
+        borderBottom: "1px solid gray",
+        alignItems: "center",
+        width: "1000px",
+        height: "80px"
+    
+    },
+    liElement: {
+        justifyContent: "space-between",
+        
+    },
+    liElementDesc: {
+        fontStyle: "italic",
+        // fontFamily: "Merriweather"
+    },
+    numbers: {
+        listStyle: "none",
+        fontSize: "1.4em",
+        display: "flex",
+        justifyContent: "center",
+
+        "& li": {
+            padding: "15px",
+            border: "1px transparent grey",
+            margin: "15px 10px",
+
+            "&:hover": {
+                cursor: "pointer",
+                border: "1px solid grey",
+            },
+        }
+       
+    },
+
+
+  }));
+
 const Fundation = () => {
+    const classes = useStyles()
+
     const [currentPage, setCurrentPage] = useState(1)
     const [elementsPerPage, setElementsPerPage] = useState(3);
 
@@ -21,16 +74,25 @@ const Fundation = () => {
 
     return ( 
         <div>
-            <ul>{currentElements.map((fundation, index) => {
+            <ul className={classes.ulList} >{currentElements.map((fundation, index) => {
                return <li key={index}>
-               <div>
-                   <p>{fundation.title}</p>
-                   <p>{fundation.description}</p>
-                   <p>{fundation.items}</p>
+               <div className={classes.liElements}>
+                   <div className={classes.liElement}>
+                    <Typography variant="h5">
+                    <p >{fundation.title}</p>
+                    </Typography>
+                    <p className={classes.liElementDesc}>{fundation.description}</p>
+                   </div>
+                 
+                   <p className={classes.liElement}>{fundation.items}</p>
                </div>
                </li>
             })}</ul>
+
+            <ul className={classes.numbers}>
             {pageNumbers}
+            </ul>
+          
         </div>
   
      );
