@@ -31,7 +31,14 @@ const useStyles = makeStyles((theme) => ({
     },
 
     title: {
-        margin: "15px 0",
+        marginTop: "15px",
+    },
+    decorationLine: {
+        display: "flex",
+        width: "60px",
+        height: "8px",
+        borderTop: "2px solid grey",
+        margin: "7.5px 0",
     }
 
 
@@ -46,6 +53,7 @@ const FourSteps = () => {
               <Typography  className={classes.title} variant="h6">
             <h6 >Wybierz rzeczy</h6>
             </Typography>
+            <span className={classes.decorationLine}></span>
             <Typography variant="body2">
             <p>Ubrania, zabawki, sprzęt i inne</p>
             </Typography>
@@ -56,6 +64,7 @@ const FourSteps = () => {
               <Typography  className={classes.title} variant="h6">
             <h6 >Wybierz rzeczy</h6>
             </Typography>
+            <span className={classes.decorationLine}></span>
             <Typography variant="body2">
             <p>Ubrania, zabawki, sprzęt i inne</p>
             </Typography>
@@ -66,6 +75,7 @@ const FourSteps = () => {
               <Typography  className={classes.title} variant="h6">
             <h6 >Wybierz rzeczy</h6>
             </Typography>
+            <span className={classes.decorationLine}></span>
             <Typography variant="body2">
             <p>Ubrania, zabawki, sprzęt i inne</p>
             </Typography>
@@ -76,6 +86,7 @@ const FourSteps = () => {
               <Typography  className={classes.title} variant="h6">
             <h6 >Wybierz rzeczy</h6>
             </Typography>
+            <span className={classes.decorationLine}></span>
             <Typography variant="body2">
             <p>Ubrania, zabawki, sprzęt i inne</p>
             </Typography>

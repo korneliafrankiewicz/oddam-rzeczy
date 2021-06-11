@@ -1,11 +1,7 @@
-import { createMuiTheme } from '@material-ui/core';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 import "../src/scss/settings/_colors.scss";
 import "../src/scss/settings/_fonts.scss";
 import createPalette from '@material-ui/core/styles/createPalette';
-// import {yellow , grey} from '@material-ui/core/colors';
-
-// const newYellow = yellow['600'];
-// const newGrey = grey['800'];
 
 const opensans = {
   fontFamily: "Open Sans"
@@ -13,7 +9,10 @@ const opensans = {
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: opensans,
+    fontFamily: [
+      'Open sans',
+      'Merriweather',
+    ].join(',')
   },
     palette: createPalette({
       primary: {

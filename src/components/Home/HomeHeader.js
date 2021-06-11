@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
     return (
         <>
-        <div className={classes.root}></div>
+        <div id="home_header" className={classes.root}></div>
         <div className={classes.nav}>
 
         <Navigation/>

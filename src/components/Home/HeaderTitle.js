@@ -3,7 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import DecorationImg from "../../assets/assets/Decoration.svg" 
+import DecorationImg from "../../assets/assets/Decoration.svg";
+import {
+    HashRouter,
+    Route,
+    Link,
+    Switch,
+    NavLink,
+  } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -29,18 +36,19 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "20px",
         justifyContent: "space-between",
     },
-    button: {
-        fontSize: "2em",      
+    button: {     
         border: "0.4px solid #3C3C3C",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-around",
         padding: "0.4em 2em",
+        textDecoration: "none",
         width: "45%"
     },
     span: {
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        fontSize: "1.8em"
     },
 
   }));
@@ -61,8 +69,8 @@ const HeaderTitle = () => {
             </div>
 
             <div className={classes.buttons}>
-                <Button className={classes.button} ><span className={classes.span}>ODDAJ <br/> RZECZY</span> </Button>
-                <Button className={classes.button}><span className={classes.span}>ZORGANIZUJ <br/> ZBIÓRKĘ</span></Button>
+            <Link to="/logowanie" className={classes.button}><Button  ><span className={classes.span}>ODDAJ <br/>RZECZY</span> </Button></Link>
+            <Link to="/logowanie" className={classes.button}><Button  ><span className={classes.span}>ZORGANIZUJ <br/>ZBIÓRKĘ</span> </Button></Link> 
             </div>
         </div>
         </Container>

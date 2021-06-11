@@ -1,7 +1,7 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-
+import {ThemeProvider} from "@material-ui/core/styles";
 import { makeStyles } from '@material-ui/core/styles';
 import {Link} from "react-scroll"
 
@@ -38,17 +38,11 @@ const Menu = () => {
        
         <AppBar color="primary" className={classes.root} >
             <Toolbar >
-                {/* <Button className={classes.menuButton} color="inherit">Start</Button> */}
-                {/* <Button className={classes.menuButton} color="inherit">O co chodzi?</Button> */}
-                <Link className={classes.menuLink} to="simple_steps" smooth={true} duration={1000}>Start</Link>
+                <Link className={classes.menuLink} to="home_header" smooth={true} duration={1000}>Start</Link>
                 <Link className={classes.menuLink} to="simple_steps" smooth={true} duration={1000}>O co chodzi?</Link>
                 <Link className={classes.menuLink} to="about_us" smooth={true} duration={1000}>O nas</Link>
                 <Link className={classes.menuLink} to="who_we_help" smooth={true} duration={1000}>Fundacja i organizacje</Link>
                 <Link className={classes.menuLink} to="contact_form" smooth={true} duration={1000}>Kontakt</Link>
-                {/* <Button className={classes.menuButton} color="inherit">O nas</Button>
-                <Button className={classes.menuButton} color="inherit">Fundacja i organizacje</Button>
-                <Button className={classes.menuButton} color="inherit">Kontakt</Button> */}
-               
             </Toolbar>
         </AppBar>
 

@@ -24,9 +24,13 @@ const useStyles = makeStyles((theme) => ({
     },
     btn: {
         display: "flex",
-        fontSize: "0.8em",
+        fontSize: "0.9em",
+        textDecoration: "none",
+        border: "1px solid transparent",
+
         "&:hover": {
-            border: "0.5px solid #FAD648"
+            border: "1px solid #FAD648",
+            cursor: "pointer"
         },
     
     }
@@ -38,10 +42,13 @@ const Login  = () => {
     return (
                    <div className={classes.root}>
                        <div className={classes.buttons}>
-                        <Link to="/logowanie">
-                        <Button className={classes.btn}>Zaloguj</Button>
+                        <Link to="/logowanie" className={classes.btn}>
+                        <Button>Zaloguj</Button>
                         </Link>
-                        <Button className={classes.btn} >Załóż konto</Button>
+                        <Link to="/rejestracja" className={classes.btn}>
+                        <Button>Załóż konto</Button>
+                        </Link>
+                        
                        </div>
 
                     </div>

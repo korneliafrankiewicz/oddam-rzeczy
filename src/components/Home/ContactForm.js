@@ -223,7 +223,7 @@ validateMessage(message) ? inquiry.message=message : setUnValidMess(true);
                     id="standard-textarea"
                     color="secondary"
                     label="Wpisz swoje imię"
-                    placeholder="Placeholder"
+                    placeholder="Wpisz swoje imię"
                     multiline
                     className={classes.input}
                     value={name}
