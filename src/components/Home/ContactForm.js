@@ -107,7 +107,7 @@ const ContactForm = () => {
     const [unValidName,setUnValidName]=useState(false);
     const [unValidEmail,setUnValidEmail]=useState(false);
     const [unValidMess,setUnValidMess]=useState(false);
-    const [opCom,setOpCom]=useState(false);
+    const [success,setSuccess]=useState(false);
 
     const handleChangeName = (e) => {
       setName(e.target.value)
@@ -120,11 +120,11 @@ const ContactForm = () => {
     };
 
     
-    // useEffect(() => {
-    //   setName("");
-    //   setEmail("");
-    //   setMessage("")
-    // }, opCom);
+    useEffect(() => {
+      setName("");
+      setEmail("");
+      setMessage("")
+    }, [success]);
 
 
     const onSubmit = (event) => {
@@ -156,10 +156,31 @@ const ContactForm = () => {
       function validateMessage(message) {
         return message.length >= 120;
       }
-    
-validateName(name) ? inquiry.name=name : setUnValidName(true);
-validateEmail(email) ? inquiry.email=email  : setUnValidEmail(true);
-validateMessage(message) ? inquiry.message=message : setUnValidMess(true);
+
+if(validateName(name)){
+  inquiry.name=name
+} else {
+  setUnValidName(true)
+  setSuccess(false)
+} 
+
+if(validateEmail(email)){
+  inquiry.email=email
+} else {
+  setUnValidEmail(true)
+  setSuccess(false)
+}
+if(validateMessage(message)){
+  inquiry.message=message
+} else {
+  setUnValidMess(true)
+  setSuccess(false)
+}
+
+
+// validateName(name) ? inquiry.name=name : setUnValidName(true) && setSuccess(false);
+// validateEmail(email) ? inquiry.email=email  : setUnValidEmail(true) && setSuccess(false);
+// validateMessage(message) ? inquiry.message=message : setUnValidMess(true) && setSuccess(false);
 
 
       const API = "https://fer-api.coderslab.pl/v1/portfolio/contact";
@@ -181,21 +202,13 @@ validateMessage(message) ? inquiry.message=message : setUnValidMess(true);
         .then(data=>{
             console.log(data)
             if(data.status==="success"){
-              setOpCom(true)
+              setSuccess(true)
 
             }
         })
         .catch(error=>{
             console.log(error)
         })
-
-        if(opCom) {
-          setName("");
-          setEmail("")
-          setMessage("")
-          console.log("cokolwiek")
-
-        }
     }
 
   
@@ -219,7 +232,7 @@ validateMessage(message) ? inquiry.message=message : setUnValidMess(true);
                 <img src={DecorationImg} />
                 </div>
 
-              { opCom &&
+              { success &&
                 <div className={classes.succesMessage}>
                  <h1>Wiadomość została wysłana! <br/> Wkrótce się skontaktujemy</h1>
                </div>

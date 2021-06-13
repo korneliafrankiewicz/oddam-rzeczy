@@ -1,18 +1,18 @@
 export const fundations = [
      {
-        title : "title1",
+        title : "Fundacja1",
         description : "description1",
         items : "items1"
     },
 
     {
-        title : "title2",
+        title : "Fundacja2",
         description : "description2",
         items : "items2"
     },
 
     {
-        title : "title3",
+        title : "Fundacja3",
         description : "description3",
         items : "items3"
     },
