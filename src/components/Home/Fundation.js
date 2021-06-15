@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     },
     liElementDesc: {
         fontStyle: "italic",
-        // fontFamily: "Merriweather"
     },
     numbers: {
         listStyle: "none",

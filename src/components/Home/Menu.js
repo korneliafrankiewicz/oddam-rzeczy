@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         top: "80px",
         position: "absolute",
         alignItems: "center",
-        justifyContent:"space-between"
+        justifyContent:"space-between",
+        backgroundColor: "transparent",
     },
     menuButton: {
         "&:hover": {

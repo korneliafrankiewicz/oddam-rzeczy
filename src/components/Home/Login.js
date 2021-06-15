@@ -8,6 +8,7 @@ import {
     Switch,
     NavLink,
   } from 'react-router-dom';
+  import LogInComponent from "./LogInComponent";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,6 +46,7 @@ const Login  = () => {
                         <Link to="/logowanie" className={classes.btn}>
                         <Button>Zaloguj</Button>
                         </Link>
+                        
                         <Link to="/rejestracja" className={classes.btn}>
                         <Button>Załóż konto</Button>
                         </Link>

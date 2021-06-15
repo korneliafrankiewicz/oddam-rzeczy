@@ -7,11 +7,13 @@ import HomeHeroImg from "../../assets/assets/Home-Hero-Image.jpg";
 import SimpleSteps from "../Home/SimpleSteps";
 import AboutUs from "../Home/AboutUs";
 import WhoWeHelp from "../Home/WhoWeHelp";
-import ContactForm from "../Home/ContactForm"
+import ContactForm from "../Home/ContactForm";
+import LogInComponent from "./LogInComponent";
 
 const Home = () => {
     return (
         <div className="home-page">
+            <LogInComponent/>
             <HomeHeader/>
             <HomeThreeColumns />
             <SimpleSteps />
