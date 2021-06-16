@@ -178,11 +178,6 @@ if(validateMessage(message)){
 }
 
 
-// validateName(name) ? inquiry.name=name : setUnValidName(true) && setSuccess(false);
-// validateEmail(email) ? inquiry.email=email  : setUnValidEmail(true) && setSuccess(false);
-// validateMessage(message) ? inquiry.message=message : setUnValidMess(true) && setSuccess(false);
-
-
       const API = "https://fer-api.coderslab.pl/v1/portfolio/contact";
 
       fetch(`${API}`,{

@@ -4,7 +4,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import DecorationImg from "../../assets/assets/Decoration.svg";
 import TextField from '@material-ui/core/TextField';
-import Navigation from "./Navigation"
+import Navigation from "./Navigation";
+import LogInForm from '../LogInForm';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -73,51 +74,7 @@ const useStyles = makeStyles((theme) => ({
 
 const LogInComponent = () => {
     const classes = useStyles();
-    const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-
-    const [unValidPassword,setUnValidPassword]=useState(false);
-    const [unValidEmail,setUnValidEmail]=useState(false);
-
-    const handleChangePassword = (e) => {
-      setPassword(e.target.value)
-    };
-    const handleChangeEmail = (e) => {
-      setEmail(e.target.value)
-    };
-
-
-    const onSubmit = (event) => {
-      event.preventDefault()
-      setUnValidPassword(false);
-      setUnValidEmail(false);
-
-      function validateEmail(email) {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase()) && email.length > 0;
-  
-    }
-
-    function validatePassword(password) {
-      return password.length >= 6;
-  }
-
-
-  if(validatePassword(password)){
-    console.log("jest ok")
-  } else {
-    setUnValidPassword(true)
-    console.log("nie ok")
-  } 
-  
-  if(validateEmail(email)){
-
-  } else {
-    setUnValidEmail(true)
-  }
-}
-
-
+    
     return ( 
         <div className={classes.root}>
 
@@ -136,43 +93,10 @@ const LogInComponent = () => {
                 <img src={DecorationImg} />
                 </div>
 
-              <form className={classes.loginForm} noValidate autoComplete="off" onSubmit={onSubmit}>
-             
-              <div className={classes.inputs} >
-              <TextField 
-              className={classes.input}
-              id="standard-basic" 
-              label="Email" 
-              color="secondary"
-              value={email}
-              onChange={handleChangeEmail} 
-              />
-              <TextField
-              className={classes.input}
-                id="standard-password-input"
-                label="Hasło"
-                type="password"
-                autoComplete="current-password"
-                color="secondary"
-                value={password}
-                onChange={handleChangePassword}
-              />
-              </div>
-           
-
-              <div className={classes.buttons}>
-                    <Button className={classes.button} >Załóż konto</Button>
-                    <Button className={classes.button}  type="submit">Zaloguj</Button>
-                </div>
-
-    
-             </form>
+             <LogInForm/>
         
 
           
-                      {unValidPassword && <p className={classes.errorMessage}>Podane imię jest nieprawidłowe</p>}
-                      {unValidEmail && <p className={classes.errorMessage}>Podany email jest nieprawidłowy</p>}
-
            </div> 
         </div>
      );

@@ -10,6 +10,7 @@ import {
   } from 'react-router-dom';
   import LogInComponent from "./LogInComponent";
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
@@ -50,6 +51,8 @@ const Login  = () => {
                         <Link to="/rejestracja" className={classes.btn}>
                         <Button>Załóż konto</Button>
                         </Link>
+
+         
                         
                        </div>
 

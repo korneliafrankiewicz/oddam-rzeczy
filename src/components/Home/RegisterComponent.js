@@ -5,6 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import DecorationImg from "../../assets/assets/Decoration.svg";
 import TextField from '@material-ui/core/TextField';
 import Navigation from "./Navigation";
+import RegisterForm from '../../RegisterForm';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -74,68 +75,6 @@ const useStyles = makeStyles((theme) => ({
 
 const RegisterComponent = () => {
     const classes = useStyles();
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [email, setEmail] = useState("");
-
-    const [unValidPassword,setUnValidPassword]=useState(false);
-    const [unValidConfirmPassword,setUnValidConfirmPassword]=useState(false);
-    const [unValidEmail,setUnValidEmail]=useState(false);
-
-    const handleChangePassword = (e) => {
-      setPassword(e.target.value)
-    };
-    const handleChangeEmail = (e) => {
-      setEmail(e.target.value)
-    };
-
-    const handleChangeConfirmPassword = (e) => {
-      setConfirmPassword(e.target.value)
-    };
-
-    const onSubmit = (event) => {
-      event.preventDefault()
-      setUnValidPassword(false);
-      setUnValidEmail(false);
-      setUnValidConfirmPassword(false);
-
-      function validateEmail(email) {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        return re.test(String(email).toLowerCase()) && email.length > 0;
-  
-    }
-
-    function validatePassword(password) {
-      return password.length >= 6;
-  }
-
-  function validateConfirmPassword(password) {
-   if(password.value === confirmPassword.value){
-     console.log("są te same")
-   } else {
-    setUnValidConfirmPassword(true)
-   }
-}
-
-  if(validatePassword(password)){
-    console.log("haslo jest ok")
-  } else {
-    setUnValidPassword(true)
-    console.log("haslo nie ok")
-  } 
-
-  if(validateConfirmPassword(password)){
-    console.log("hasla sa takie same")
-  }
-
-
-  if(validateEmail(email)){
-
-  } else {
-    setUnValidEmail(true)
-  }
-}
-
     
 
     return ( 
@@ -154,48 +93,10 @@ const RegisterComponent = () => {
                 <img src={DecorationImg} />
                 </div>
 
-              <form className={classes.loginForm} noValidate autoComplete="off"  onSubmit={onSubmit}>
-              <div className={classes.inputs} >
-              <TextField 
-              className={classes.input}
-              id="standard-basic" 
-              label="Email" 
-              color="secondary"
-              value={email}
-              onChange={handleChangeEmail} 
-              />
-              <TextField
-              className={classes.input}
-                id="standard-password-input"
-                label="Hasło"
-                type="password"
-                autoComplete="current-password"
-                color="secondary"
-                value={password}
-                onChange={handleChangePassword}
-              />
-                <TextField
-              className={classes.input}
-                id="standard-password-input"
-                label="Powtórz hasło"
-                type="password"
-                autoComplete="current-password"
-                color="secondary"
-                value={confirmPassword}
-                onChange={handleChangeConfirmPassword}
-              />
-              </div>
-
-                <div className={classes.buttons}>
-                    <Button className={classes.button} type="submit">Załóż konto</Button>
-                    <Button className={classes.button}>Zaloguj</Button>
-                </div>
-             </form>
-        
-                      {unValidPassword && <p className={classes.errorMessage}>Podane hasło jest nieprawidłowe</p>}
-                      {unValidConfirmPassword && <p className={classes.errorMessage}>Podane hasła nie są takie same</p>}
-                      {unValidEmail && <p className={classes.errorMessage}>Podany email jest nieprawidłowy</p>}
-                
+     
+            <RegisterForm/>
+            
+       
            </div> 
         </div>
      );
