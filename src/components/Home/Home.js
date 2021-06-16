@@ -8,12 +8,12 @@ import SimpleSteps from "../Home/SimpleSteps";
 import AboutUs from "../Home/AboutUs";
 import WhoWeHelp from "../Home/WhoWeHelp";
 import ContactForm from "../Home/ContactForm";
-import LogInComponent from "./LogInComponent";
+import LogOut from "./LogOut";
 
 const Home = () => {
     return (
         <div className="home-page">
-            <LogInComponent/>
+            {/* <LogOut /> */}
             <HomeHeader/>
             <HomeThreeColumns />
             <SimpleSteps />
