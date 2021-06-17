@@ -9,6 +9,8 @@ import {
     NavLink,
   } from 'react-router-dom';
   import LogInComponent from "./LogInComponent";
+  import SignOutButton from "./SignOutButton";
+  import  {AuthUserContext} from "../../utils/Session"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -43,6 +45,22 @@ const Login  = () => {
     const classes = useStyles();
     return (
                    <div className={classes.root}>
+                        <AuthUserContext.Consumer>
+                        {authUser =>  
+                        authUser ? <LoginAuth /> : <LoginNoAuth />
+                        }
+                       </AuthUserContext.Consumer>
+
+                    </div>
+
+ 
+     );
+}
+
+const LoginNoAuth  = () => {
+    const classes = useStyles();
+    return (
+                   <div className={classes.root}>
                        <div className={classes.buttons}>
                         <Link to="/logowanie" className={classes.btn}>
                         <Button>Zaloguj</Button>
@@ -50,10 +68,24 @@ const Login  = () => {
                         
                         <Link to="/rejestracja" className={classes.btn}>
                         <Button>Załóż konto</Button>
-                        </Link>
+                        </Link>       
+                       </div>
+                    </div>
 
-         
-                        
+ 
+     );
+}
+
+const LoginAuth  = () => {
+    const classes = useStyles();
+    return (
+                   <div className={classes.root}>
+                       <div className={classes.buttons}>
+                        <Link to="/wylogowano">
+                        <SignOutButton /> 
+                        </Link>
+                      
+
                        </div>
 
                     </div>
@@ -61,5 +93,4 @@ const Login  = () => {
  
      );
 }
- 
 export default Login;

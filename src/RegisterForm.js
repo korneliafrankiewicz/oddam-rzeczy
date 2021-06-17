@@ -109,28 +109,25 @@ const RegisterFormBase = (props) => {
 
     function validatePassword(password) {
       return password.length >= 6;
-  }
+    
+    }
 
   function validateConfirmPassword(password1, password2) {
-   if(password1 === password2){
-     console.log("są te same")
-     setUnValidConfirmPassword(false)
-     return true
-   } else {
-    setUnValidConfirmPassword(true)
-    return false
-   }
+    console.log(password2)
+    console.log(password1 === password2)
+  return password1 === password2
 }
 
   if(validatePassword(password)){
-    console.log("haslo jest ok")
   } else {
     setUnValidPassword(true)
     console.log("haslo nie ok")
   } 
 
-  if(validateConfirmPassword(password)){
+  if(validateConfirmPassword(password, confirmPassword)){
     console.log("hasla sa takie same")
+  } else {
+    setUnValidConfirmPassword(true)
   }
 
 
@@ -145,13 +142,12 @@ const RegisterFormBase = (props) => {
     props.firebase
   .doCreateUserWithEmailAndPassword(email, password)
   .then(authUser => {
-      props.history.push("/logowanie")
+      props.history.push("/")
   })
   .catch(error => {
       setError({error})
   })
-  }
-
+}
   
 }
 
@@ -175,7 +171,7 @@ const RegisterFormBase = (props) => {
               className={classes.input}
                 id="standard-password-input"
                 label="Hasło"
-                type="password"
+                // type="password"
                 autoComplete="current-password"
                 color="secondary"
                 value={password}
@@ -185,7 +181,7 @@ const RegisterFormBase = (props) => {
               className={classes.input}
                 id="standard-password-input"
                 label="Powtórz hasło"
-                type="password"
+                // type="password"
                 autoComplete="current-password"
                 color="secondary"
                 value={confirmPassword}

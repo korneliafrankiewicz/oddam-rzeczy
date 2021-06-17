@@ -1,5 +1,5 @@
 import React from "react";
-import RegisterForm from "../../RegisterForm";
+
 const FirebaseContext=React.createContext(null);
 
 export const withFirebase = Component => (props) =>(

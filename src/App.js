@@ -14,6 +14,7 @@ import Login from "../src/components/Home/Login";
 import LogInComponent from './components/Home/LogInComponent';
 import RegisterComponent from "./components/Home/RegisterComponent";
 import LogOut from './components/Home/LogOut';
+import {withAuthentication} from "./utils/Session"
 
 // var firebaseConfig = {
 //   apiKey: "AIzaSyA6bXfSAlS27QfsnGYNFhNJFPKnAmomIBQ",
@@ -43,4 +44,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthentication(App);
